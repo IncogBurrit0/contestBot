@@ -15,20 +15,8 @@ MAX_AGE_DAYS = 7
 # Multiple contest sources (Blogs, Aggregators, and Subreddits)
 FEEDS = [
     {
-        "name": "Contest Bee",
-        "url": "https://www.contestbee.com/feed/"
-    },
-    {
-        "name": "Sweepstakes Lovers",
-        "url": "https://sweepstakeslovers.com/"
-    },
-    {
-        "name": "Sweeties Sweeps",
-        "url": "https://sweetiessweeps.com/feed"
-    },
-    {
-        "name": "Local Radio Alerts",
-        "url": "https://www.google.com/alerts/feeds/12307665313365322185/16480576073963582464"
+        "name": "Sweepstakes Alerts",
+        "url": "https://www.google.com/alerts/feeds/12307665313365322185/3885515929942935714"
     }
 ]
 
