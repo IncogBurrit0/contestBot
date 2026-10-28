@@ -20,19 +20,11 @@ FEEDS = [
     },
     {
         "name": "Sweepstakes Lovers",
-        "url": "https://www.sweepstakeslovers.com/feed/"
+        "url": "https://sweepstakeslovers.com/"
     },
     {
         "name": "Sweeties Sweeps",
         "url": "https://sweetiessweeps.com/feed"
-    },
-    {
-        "name": "r/Giveaways",
-        "url": "https://www.reddit.com/r/giveaways/new/.rss"
-    },
-    {
-        "name": "r/Sweepstakes",
-        "url": "https://www.reddit.com/r/sweepstakes/new/.rss"
     },
     {
         "name": "Local Radio Alerts",
