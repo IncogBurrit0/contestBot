@@ -1,0 +1,42 @@
+name: Check Contests and Alert
+
+on:
+  schedule:
+    # Runs every 30 minutes (cron format)
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Allows you to manually trigger it via the Actions tab anytime
+
+permissions:
+  contents: write # Grants the workflow permission to commit seen_contests.json back to your repo
+
+jobs:
+  run-alert-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Bot
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python bot.py
+
+      - name: Commit and Push Updated Database
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add seen_contests.json
+          # Only commit if seen_contests.json actually changed
+          git diff --staged --quiet || (git commit -m "Update seen contests [skip ci]" && git push)
