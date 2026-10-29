@@ -21,7 +21,7 @@ FEEDS = [
 ]
 
 # Optional keyword filter (Leave empty [] to receive all contests)
-KEYWORDS = ["cash", "gift card", "trip", "concert", "radio", "car", "tech"]
+KEYWORDS = []  # "cash", "gift card", "trip", "concert", "radio", "car", "tech"
 
 SEEN_FILE = "seen_contests.json"
 
